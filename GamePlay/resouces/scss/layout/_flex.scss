@@ -1,0 +1,129 @@
+/*
+ * jQuery FlexSlider v2.5.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover,
+.flex-container a:focus,
+.flex-slider a:focus {
+  outline: none;
+}
+
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .flexslider .slides {
+  display: block;
+}
+
+* html .flexslider .slides {
+  height: 1%;
+}
+
+.no-js .flexslider .slides > li:first-child {
+  display: block;
+}
+
+.flexslider {
+  position: relative;
+  margin-bottom: 40px;
+
+  .slides {
+
+    li {
+      position: relative;
+
+      .desc {
+        position: absolute;
+        bottom: 60px;
+        left: 95px;
+        width: 400px;
+        background: rgba(0, 0, 0, 0.59);
+        color: #fff;
+        padding: 20px;
+        backface-visibility: hidden;
+
+        h2 {
+          margin: 0 0 10px 0;
+          font-weight: normal;
+        }
+
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.flex-direction-nav {
+
+  a {
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-top: -30px;
+  }
+
+  .flex-prev {
+    @include oneline-sprite-box($icons, arrow-left);
+    left: 20px;
+  }
+
+  .flex-next {
+    @include oneline-sprite-box($icons, arrow-right);
+    right: 20px;
+  }
+}

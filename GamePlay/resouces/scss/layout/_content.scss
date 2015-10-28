@@ -1,0 +1,291 @@
+body {
+  font-family: 'Tahoma', sans-serif;
+  background: image-url('bg/site-bg.jpg');
+  @include background-size(cover);
+}
+
+.read-more a {
+  display: inline-block;
+  background: #484747;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 9px 34px;
+  border: 2px solid #484747;
+  @include border-radius(5px);
+  @include transition(all .3s);
+
+  &:hover {
+    background: none;
+    color: #484747;
+  }
+}
+
+.site-container {
+  width: 980px;
+  margin: 0 auto;
+}
+
+.header-wrapper {
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+      }
+    }
+  }
+
+  .header-top {
+    background: #292929;
+    margin-bottom: 110px;
+    font-size: 18px;
+    @include clearfix();
+
+    .reg a:before {
+      @include pseudo-block($top: 15px, $left: -25px);
+      @include oneline-sprite-box($icons, profile)
+    }
+
+    .enter a:before {
+      @include pseudo-block($top: 16px, $left: -25px);
+      @include oneline-sprite-box($icons, enter)
+    }
+
+    ul {
+      float: right;
+
+      li {
+        margin-left: 30px;
+        padding-left: 20px;
+
+        a {
+          padding: 13px 0;
+        }
+      }
+    }
+  }
+
+  .header-bottom {
+    background: #292929;
+    margin-bottom: 25px;
+    font-size: 20px;
+
+    ul {
+      @include clearfix();
+    }
+
+    li {
+      border-left: 2px solid #4a4a4a;
+      border-right: 2px solid #141414;
+      display: block;
+      float: left;
+      @include transition(all .3s);
+
+      &.current_page_item {
+        border-left: 2px solid #292929;
+        border-right: 2px solid #292929;
+        @include box-shadow(inset 0px 0px 36px -7px #000);
+      }
+
+      &:hover {
+        border-left: 2px solid #292929;
+        border-right: 2px solid #292929;
+        @include box-shadow(inset 0px 0px 36px -7px #000);
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+      padding: 25px 35px;
+
+    }
+  }
+
+}
+
+.content-wrapper {
+  margin-bottom: 40px;
+
+  .site-container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.87);
+  }
+
+  .block-news {
+
+    .news {
+      @include clearfix();
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #afaca9;
+
+      .left-part {
+        float: left;
+        width: 20%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .right-part {
+        float: left;
+        width: 80%;
+        padding-left: 20px;
+        @include box-sizing(border-box);
+
+        .news-top {
+          @include clearfix();
+        }
+
+        h2 {
+          margin: 0;
+          font-size: 18px;
+          text-transform: uppercase;
+          float: left;
+          width: 80%;
+
+          a {
+            color: #4a4a4a;
+            font-weight: bold;
+
+            &:hover {
+              color: #90252a;
+            }
+          }
+        }
+
+        .date {
+          float: right;
+        }
+
+        p {
+          font-size: 16px;
+
+          a {
+            color: #90252a;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-wrapper {
+  background: #292929;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  .footer-top {
+    padding: 15px 0;
+    border-bottom: 2px solid #161616;
+
+    li {
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+      display: block;
+    }
+  }
+
+  .footer-bottom {
+    color: #fff;
+    padding: 15px 0;
+    @include clearfix();
+
+    .copyright {
+      font-size: 12px;
+      float: left;
+    }
+
+    .social {
+      float: right;
+
+      ul {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+
+      }
+
+      a {
+        display: block;
+      }
+
+      .vk a {
+        @include oneline-sprite-box($icons, vk);
+
+        &:hover {
+          @include oneline-sprite-box($icons, vk-a);
+        }
+      }
+
+      .face a {
+        @include oneline-sprite-box($icons, face);
+
+        &:hover {
+          @include oneline-sprite-box($icons, face-a);
+        }
+      }
+
+      .twit a {
+        @include oneline-sprite-box($icons, twit);
+
+        &:hover {
+          @include oneline-sprite-box($icons, twit-a);
+        }
+      }
+    }
+  }
+}
+
+.block-pager {
+  text-align: center;
+
+  .wp-pagenavi {
+    display: inline-block;
+    font-size: 20px;
+
+    .current {
+      padding: 6px 13px;
+      border-radius: 5px;
+      background-color: #292929;
+      color: #fff;
+    }
+
+    a {
+      padding: 4px 11px;
+      margin: 0 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #292929;
+
+      &:hover{
+        box-shadow: 0 0 0px 2px #292929;
+      }
+    }
+  }
+}
